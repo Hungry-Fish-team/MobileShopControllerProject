@@ -1,0 +1,50 @@
+ManifestFileVersion: 0
+CRC: 4135653802
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 73e8e9f1374ae4d4cf441a0eeb1ba0d4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 63dd8f9fd82075614d898ba633d4629a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1ba302411aa3ab94081776aaf22df1bc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0579df4dc2c038240925448602468c0f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/AllItems/00003.asset
+- Assets/Resources/AllItems/00009.asset
+- Assets/Resources/AllItems/00021.asset
+- Assets/Resources/AllItems/00011.asset
+- Assets/Resources/AllItems/00001.asset
+- Assets/Resources/AllItems/00013.asset
+- Assets/Resources/AllItems/00017.asset
+- Assets/Resources/AllItems/00007.asset
+- Assets/Resources/AllItems/00004.asset
+- Assets/Resources/AllItems/00006.asset
+- Assets/Resources/AllItems/00019.asset
+- Assets/Resources/AllItems/00026.asset
+- Assets/Resources/AllItems/00010.asset
+- Assets/Resources/AllItems/00008.asset
+- Assets/Resources/AllItems/00020.asset
+- Assets/Resources/AllItems/TypesFile.asset
+- Assets/Resources/AllItems/00022.asset
+- Assets/Resources/AllItems/00014.asset
+- Assets/Resources/AllItems/00018.asset
+- Assets/Resources/AllItems/00005.asset
+- Assets/Resources/AllItems/00012.asset
+- Assets/Resources/AllItems/00002.asset
+- Assets/Resources/AllItems/00024.asset
+- Assets/Resources/AllItems/00023.asset
+- Assets/Resources/AllItems/00016.asset
+- Assets/Resources/AllItems/00025.asset
+- Assets/Resources/AllItems/00015.asset
+Dependencies: []
