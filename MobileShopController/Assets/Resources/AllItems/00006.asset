@@ -24,4 +24,4 @@ MonoBehaviour:
   manufacturingFirm: 
   descriptionOfItem: 
   imagesOfItem: []
-  isThereItemOnStore: 0
+  isThereItemOnStore: 1

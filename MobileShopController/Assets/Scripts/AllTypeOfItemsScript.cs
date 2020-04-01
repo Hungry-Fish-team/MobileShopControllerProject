@@ -20,6 +20,8 @@ public class AllTypeOfItemsScript : MonoBehaviour
 
     string lastTypesOfItems = "";
 
+    public int functionNumber;
+
     private void InitializationAllObjects()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -49,7 +51,7 @@ public class AllTypeOfItemsScript : MonoBehaviour
             {
                 if (isPrefabsLoaded == false)
                 {
-                    LoadObjectToType(loadScript.typeOfItems.typesOfItem);
+                    LoadObjectToTypeWithOwnInfo();
                     typeOfItemsInputField.interactable = false;
                     saveButton.interactable = false;
                 }
@@ -58,13 +60,47 @@ public class AllTypeOfItemsScript : MonoBehaviour
             {
                 if (isPrefabsLoaded == false)
                 {
-                    LoadObjectToType(gameManager.typesOfItem.typesOfItem);
+                    LoadObjectToTypeWithOwnInfo();
                     lastTypesOfItems = typeOfItemsInputField.text;
                     typeOfItemsInputField.interactable = true;
                     saveButton.interactable = true;
                 }
 
                 CheckChanges();
+            }
+        }
+    }
+
+    private void LoadObjectToTypeWithOwnInfo()
+    {
+        if (lastScene == "SHOP")
+        {
+            if (functionNumber == 0)
+            {
+                LoadObjectToType(loadScript.typeOfItems.typesOfItem);
+            }
+            else if (functionNumber == 1)
+            {
+                LoadObjectToType(loadScript.typeOfItems.nameOfCategoryForMainWindow);
+            }
+            else if (functionNumber == 2)
+            {
+                LoadObjectToType(loadScript.typeOfItems.secondNameOfCategoryForMainWindow);
+            }
+        }
+        else if (lastScene == "WORKPLACE")
+        {
+            if (functionNumber == 0)
+            {
+                LoadObjectToType(gameManager.typesOfItem.typesOfItem);
+            }
+            else if (functionNumber == 1)
+            {
+                LoadObjectToType(gameManager.typesOfItem.nameOfCategoryForMainWindow);
+            }
+            else if (functionNumber == 2)
+            {
+                LoadObjectToType(gameManager.typesOfItem.secondNameOfCategoryForMainWindow);
             }
         }
     }
@@ -110,13 +146,37 @@ public class AllTypeOfItemsScript : MonoBehaviour
 
         newString = typeOfItemsInputField.text.Split(new char[] { ' ' });
 
-        gameManager.typesOfItem.typesOfItem.Clear();
-        for (int i = 0; i < newString.Length; i++)
-        { 
-            gameManager.typesOfItem.typesOfItem.Add(newString[i]);
-        }
+        LoadTypeToObjectWithOwnFunc(newString);
 
         SaveChanges();
+    }
+
+    private void LoadTypeToObjectWithOwnFunc(string[] newString)
+    {
+        if(functionNumber == 0)
+        { 
+            gameManager.typesOfItem.typesOfItem.Clear();
+            for (int i = 0; i < newString.Length; i++)
+            {
+                gameManager.typesOfItem.typesOfItem.Add(newString[i]);
+            }
+        }
+        else if (functionNumber == 1)
+        {
+            gameManager.typesOfItem.nameOfCategoryForMainWindow.Clear();
+            for (int i = 0; i < newString.Length; i++)
+            {
+                gameManager.typesOfItem.nameOfCategoryForMainWindow.Add(newString[i]);
+            }
+        }
+        else if (functionNumber == 2)
+        {
+            gameManager.typesOfItem.secondNameOfCategoryForMainWindow.Clear();
+            for (int i = 0; i < newString.Length; i++)
+            {
+                gameManager.typesOfItem.secondNameOfCategoryForMainWindow.Add(newString[i]);
+            }
+        }
     }
 
     private void ClearAllTypesFromList()
